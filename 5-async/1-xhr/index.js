@@ -6,12 +6,13 @@ function fetchData(url, successCallback, errorCallback) {
   xhr.setRequestHeader('content-type', 'application/json');
   xhr.onload = function() {
     if (xhr.status >= 200 && xhr.status <= 299) {
-      successCallback({ responseText: xhr.responseText, statusText: xhr.statusText });
+      successCallback(xhr.responseText);
     } else {
-      errorCallback({ responseText: xhr.responseText, statusText: xhr.statusText });
+      errorCallback(xhr.responseText);
     }
   };
-  const payload = { name: 'hello' };
+  const payload = {};
+  payload.name = 'hello';
   xhr.send(JSON.stringify(payload));
   // end -->
 }

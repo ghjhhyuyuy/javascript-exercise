@@ -7,7 +7,7 @@ function fetchData(url) {
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.onload = function() {
       if (xhr.status >= 200 && xhr.status <= 299) {
-        resolve({ responseText: xhr.responseText, statusText: xhr.statusText });
+        resolve(xhr.responseText);
       } else {
         const error = new Error(xhr.responseText);
         error.responseText = xhr.responseText;
@@ -15,7 +15,8 @@ function fetchData(url) {
         reject(error);
       }
     };
-    const payload = { name: 'hello' };
+    const payload = {};
+    payload.name = 'hello';
     xhr.send(JSON.stringify(payload));
     // end -->
   });
