@@ -16,7 +16,7 @@ function fetchData(url, successCallback, errorCallback) {
   // end -->
 }
 
-const URL = 'http://localhost:3000/api';
+const URL = 'http://localhost:3000/api/';
 fetchData(
   URL,
   result => {

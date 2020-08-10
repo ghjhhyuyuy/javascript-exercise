@@ -1,3 +1,5 @@
 {
-  "api": { "name": "hello" }
+  "api": {
+    "name": "hello"
+  }
 }
