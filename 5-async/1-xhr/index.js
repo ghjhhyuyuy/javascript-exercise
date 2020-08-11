@@ -4,7 +4,7 @@ function fetchData(url, successCallback, errorCallback) {
   // TODO 21: 通过XMLHttpRequest实现异步请求
   xhr.open('POST', url);
   xhr.setRequestHeader('content-type', 'application/json');
-  xhr.onload = function() {
+  xhr.onload = () => {
     if (xhr.status >= 200 && xhr.status <= 299) {
       successCallback(xhr.responseText);
     } else {

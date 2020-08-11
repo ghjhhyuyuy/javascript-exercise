@@ -5,7 +5,7 @@ function fetchData(url) {
     // TODO 22: 通过Promise实现异步请求
     xhr.open('POST', url, true);
     xhr.setRequestHeader('content-type', 'application/json');
-    xhr.onload = function() {
+    xhr.onload = () => {
       if (xhr.status >= 200 && xhr.status <= 299) {
         resolve(xhr.responseText);
       } else {
